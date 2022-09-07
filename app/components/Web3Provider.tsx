@@ -11,7 +11,7 @@ import appChains from "app/chains";
 const { chains, provider } = configureChains(appChains, [publicProvider()]);
 
 const client = createClient({
-  autoConnect: false,
+  autoConnect: true,
   connectors: [
     new MetaMaskConnector({ chains }),
     new InjectedConnector({
