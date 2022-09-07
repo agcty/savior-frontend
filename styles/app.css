@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body,
+  input,
+  input:disabled,
+  select,
+  label {
+    @apply cursor-default;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  button,
+  button:hover,
+  button:focus,
+  [role=button], {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .trapezoid-tab {
+    /* // clip path was not cooperating; this requires an additional pseudo element
+    // but it is the most consistent implementation for both chrome and firefox
+    // created as a class here to make it easier to modify and read */
+    @apply relative;
+    /* // mobile styling
+    // push down 1.5px to appear over the container border
+    // set border color in JSX for active tab; otherwise transparent */
+    @apply border-b-2 border-b-transparent px-3 py-2 translate-y-[1.5px];
+    /* // desktop styling
+    // all borders will be handled by the pseudo elements */
+    @apply md:border-0 md:px-4 md:pt-1 md:pb-0.5 md:translate-y-0;
+    /* // create + position pseudo elements, inset-0 parent
+    // -1.6px offset must be set on active tab in JSX to appear as part of container below */
+    @apply md:before:-z-[1] md:after:-z-[1]
+           md:before:absolute md:after:absolute
+           md:before:inset-0 md:after:inset-0;
+    /* // left side of tab; will inherit bg + border colors of parent */
+    @apply md:before:border-t-2 md:before:border-l-2
+           md:before:-skew-x-[40deg] md:before:-translate-x-3
+           md:before:border-inherit md:before:bg-inherit;;
+    /* // right side of tab; will inherit bg + border colors of parent */
+    @apply md:after:border-t-2 md:after:border-r-2
+           md:after:skew-x-[40deg] md:after:translate-x-3
+           md:after:border-inherit md:after:bg-inherit;
+  }
+}
+
+@layer utilities {
+  .reset-number-spinner::-webkit-inner-spin-button,
+  .reset-number-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .reset-number-spinner {
+    -moz-appearance: textfield;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-b from-gold-300 via-gold-100 to-gold-300 text-transparent bg-clip-text;
+  }
+
+  .scrollbar-game {
+    scrollbar-color: #9B6525 transparent;
+  }
+
+  /* Track */
+  .scrollbar-game::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-[#563712] via-[#9B6525] to-[#67441B] rounded-xl;
+  }
+
+  .scrollbar-game::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar-hidden {
+    /* firefox */
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
