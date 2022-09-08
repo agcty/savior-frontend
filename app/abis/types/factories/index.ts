@@ -2,3 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export { Donations__factory } from "./Donations__factory";
+export { ERC721__factory } from "./ERC721__factory";
+export { NFT__factory } from "./NFT__factory";

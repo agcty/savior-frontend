@@ -1552,6 +1552,10 @@ a,
   font-weight: 500;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .italic {
   font-style: italic;
 }

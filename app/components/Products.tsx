@@ -1,9 +1,15 @@
+import { useAccount } from "wagmi";
+
+import { useERC721 } from "~/hooks/useMint";
+
+import { Button } from "./Button";
+
 const products = [
   {
     id: 1,
-    name: "Basic Tee 8-Pack",
+    name: "Crypto Stars",
     href: "#",
-    price: "$256",
+    price: "0.1 ETH",
     description:
       "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
     options: "8 colors",
@@ -14,9 +20,9 @@ const products = [
   },
   {
     id: 2,
-    name: "Basic Tee",
+    name: "Rekt Arrows",
     href: "#",
-    price: "$32",
+    price: "0.1 ETH",
     description:
       "Look like a visionary CEO and wear the same black t-shirt every day.",
     options: "Black",
@@ -26,9 +32,9 @@ const products = [
   },
   {
     id: 3,
-    name: "Basic Tee 8-Pack",
+    name: "BitBears",
     href: "#",
-    price: "$256",
+    price: "0.3 ETH",
     description:
       "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
     options: "8 colors",
@@ -39,9 +45,9 @@ const products = [
   },
   {
     id: 4,
-    name: "Basic Tee",
+    name: "Sneaky Worlds",
     href: "#",
-    price: "$32",
+    price: "0.1 ETH",
     description:
       "Look like a visionary CEO and wear the same black t-shirt every day.",
     options: "Black",
@@ -51,9 +57,9 @@ const products = [
   },
   {
     id: 5,
-    name: "Basic Tee 8-Pack",
+    name: "NY@Night",
     href: "#",
-    price: "$256",
+    price: "0.2 ETH",
     description:
       "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
     options: "8 colors",
@@ -64,20 +70,23 @@ const products = [
   },
   {
     id: 6,
-    name: "Basic Tee",
+    name: "Simple Drawings",
     href: "#",
-    price: "$32",
+    price: "1 ETH",
     description:
       "Look like a visionary CEO and wear the same black t-shirt every day.",
     options: "Black",
     imageSrc:
-      "https://lh3.googleusercontent.com/cgFAvnBcqoDZCIPUgRdYGQGdPR5HFBHgXOfKsc4-r-1Cpw9a1GEnKELv48wTF5BInT6J5Fyvu-J0ZDEIjb57YaWiwsIhh7k095sxQfE=s168",
+      "https://lh3.googleusercontent.com/vb20I7MpI0O6-b8mexl3HtLB3RnDZYfppi_0ZSRblnLekBYXGcMQtVc6pMAyUcyiANiYFYx0__gYcL8EpZ-6qjRR3fbNWKnbs4RSoA=s168",
     imageAlt: "Front of plain black t-shirt.",
   },
   // More products...
 ];
 
 export default function Products() {
+  const erc721 = useERC721();
+  const { address } = useAccount();
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -108,12 +117,16 @@ export default function Products() {
               </div>
               <div className="flex flex-1 flex-col space-y-2 p-4">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <a href={product.href}>
+                  {/* <a href={product.href}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     {product.name}
-                  </a>
+                  </a> */}
                 </h3>
-                <p className="text-sm text-gray-500">{product.description}</p>
+                <p className="text-sm text-gray-500">
+                  {/* {product.description} */}
+                  One of our exclusive NFTs to mint, {product.name} is exlsusive
+                  to our platform.
+                </p>
                 <div className="flex flex-1 flex-col justify-end">
                   <p className="text-sm italic text-gray-500">
                     {product.options}
@@ -121,6 +134,15 @@ export default function Products() {
                   <p className="text-base font-medium text-gray-900">
                     {product.price}
                   </p>
+                  <Button
+                    className="mt-4"
+                    color="blue"
+                    onClick={() => {
+                      erc721.mintTo(address!);
+                    }}
+                  >
+                    Claim
+                  </Button>
                 </div>
               </div>
             </div>
