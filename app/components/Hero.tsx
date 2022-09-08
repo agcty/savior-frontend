@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { motion, useInView, useMotionValue } from "framer-motion";
 
 import { AppScreen } from "~/components/AppScreen";
-import { AppStoreLink } from "~/components/AppStoreLink";
 import { Button } from "~/components/Button";
 import { Container } from "~/components/Container";
 import { PhoneFrame } from "~/components/PhoneFrame";
@@ -283,7 +282,7 @@ function AppDemo() {
                 <div
                   className={clsx(
                     "ml-auto text-sm tabular-nums tracking-tight",
-                    percentageChange >= 0 ? "text-cyan-500" : "text-gray-500"
+                    percentageChange >= 0 ? "text-blue-500" : "text-gray-500"
                   )}
                 >
                   {`${
@@ -295,7 +294,7 @@ function AppDemo() {
             <div className="mt-6 flex gap-4 text-xs text-gray-500">
               <div>1D</div>
               <div>5D</div>
-              <div className="font-semibold text-cyan-600">1M</div>
+              <div className="font-semibold text-blue-600">1M</div>
               <div>6M</div>
               <div>1Y</div>
               <div>5Y</div>
@@ -310,7 +309,7 @@ function AppDemo() {
                 onChangeActivePointIndex={setActivePointIndex}
               />
             </div>
-            <div className="mt-4 rounded-lg bg-cyan-500 py-2 px-4 text-center text-sm font-semibold text-white">
+            <div className="mt-4 rounded-lg bg-blue-500 py-2 px-4 text-center text-sm font-semibold text-white">
               Trade
             </div>
             <div className="mt-3 divide-y divide-gray-100 text-sm">
@@ -349,7 +348,7 @@ export function Hero() {
               like Apple, H&M, Mr. Beast, Fisher.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <AppStoreLink />
+              <Button color="blue">Donate now</Button>
               <Button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
