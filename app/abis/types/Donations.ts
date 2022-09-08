@@ -30,8 +30,9 @@ import type {
 
 export interface DonationsInterface extends utils.Interface {
   functions: {
-    "donate(address)": FunctionFragment;
     "donate()": FunctionFragment;
+    "donateFor(address)": FunctionFragment;
+    "getUser()": FunctionFragment;
     "owner()": FunctionFragment;
     "redeem(uint256)": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
@@ -42,8 +43,9 @@ export interface DonationsInterface extends utils.Interface {
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "donate(address)"
-      | "donate()"
+      | "donate"
+      | "donateFor"
+      | "getUser"
       | "owner"
       | "redeem"
       | "renounceOwnership"
@@ -52,11 +54,12 @@ export interface DonationsInterface extends utils.Interface {
       | "withdrawPayments"
   ): FunctionFragment;
 
+  encodeFunctionData(functionFragment: "donate", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "donate(address)",
+    functionFragment: "donateFor",
     values: [PromiseOrValue<string>]
   ): string;
-  encodeFunctionData(functionFragment: "donate()", values?: undefined): string;
+  encodeFunctionData(functionFragment: "getUser", values?: undefined): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "redeem",
@@ -79,11 +82,9 @@ export interface DonationsInterface extends utils.Interface {
     values: [PromiseOrValue<string>]
   ): string;
 
-  decodeFunctionResult(
-    functionFragment: "donate(address)",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "donate()", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "donate", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "donateFor", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getUser", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "redeem", data: BytesLike): Result;
   decodeFunctionResult(
@@ -169,14 +170,16 @@ export interface Donations extends BaseContract {
   removeListener: OnEvent<this>;
 
   functions: {
-    "donate(address)"(
+    donate(
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    donateFor(
       _addressFor: PromiseOrValue<string>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    "donate()"(
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
+    getUser(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
@@ -210,14 +213,16 @@ export interface Donations extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
-  "donate(address)"(
+  donate(
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  donateFor(
     _addressFor: PromiseOrValue<string>,
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  "donate()"(
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
+  getUser(overrides?: CallOverrides): Promise<BigNumber>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
@@ -251,12 +256,14 @@ export interface Donations extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    "donate(address)"(
+    donate(overrides?: CallOverrides): Promise<void>;
+
+    donateFor(
       _addressFor: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    "donate()"(overrides?: CallOverrides): Promise<void>;
+    getUser(overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
@@ -306,14 +313,16 @@ export interface Donations extends BaseContract {
   };
 
   estimateGas: {
-    "donate(address)"(
+    donate(
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    donateFor(
       _addressFor: PromiseOrValue<string>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    "donate()"(
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
+    getUser(overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -343,14 +352,16 @@ export interface Donations extends BaseContract {
   };
 
   populateTransaction: {
-    "donate(address)"(
+    donate(
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    donateFor(
       _addressFor: PromiseOrValue<string>,
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    "donate()"(
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
+    getUser(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 

@@ -81,7 +81,7 @@ export function Testimonials() {
             id="testimonials-title"
             className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
           >
-            Loved by builders worldwide.
+            What our community is saying.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
             Our software is so simple that people can’t help but fall in love

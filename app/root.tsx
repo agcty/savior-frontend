@@ -1,3 +1,4 @@
+import rainbowStylesUrl from "@rainbow-me/rainbowkit/styles.css";
 import type { MetaFunction } from "@remix-run/node";
 import {
   Links,
@@ -21,6 +22,7 @@ export const meta: MetaFunction = () => ({
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: rainbowStylesUrl },
     {
       rel: "preconnect",
       href: "https://fonts.gstatic.com",

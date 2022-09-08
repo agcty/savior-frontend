@@ -8,7 +8,7 @@ const products = [
       "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
     options: "8 colors",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+      "https://lh3.googleusercontent.com/BdxvLseXcfl57BiuQcQYdJ64v-aI8din7WPk0Pgo3qQFhAUH-B6i-dCqqc_mCkRIzULmwzwecnohLhrcH8A9mpWIZqA7ygc52Sr81hE=s168",
     imageAlt:
       "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
   },
@@ -21,7 +21,7 @@ const products = [
       "Look like a visionary CEO and wear the same black t-shirt every day.",
     options: "Black",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
+      "https://openseauserdata.com/files/7b0c87d3326e91e267fbb190d3fd1d7f.gif",
     imageAlt: "Front of plain black t-shirt.",
   },
   {
@@ -33,7 +33,7 @@ const products = [
       "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
     options: "8 colors",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+      "https://lh3.googleusercontent.com/y2GShs-0jXmEm3585tIGVQRWthk3-eCaFZ36mbl-kyNPzo0qh3T3P_fu42XI4NAfeeitBewCpgj0ZExEkDU30XQ5bWMd5gWdzFJdvw=w600",
     imageAlt:
       "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
   },
@@ -46,7 +46,7 @@ const products = [
       "Look like a visionary CEO and wear the same black t-shirt every day.",
     options: "Black",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
+      "https://lh3.googleusercontent.com/FHa6d3hpgtMexRhDQQB3g9VfUo0p0dyOd5JVHlMi5bneX6Oc0qB_XdOVDMTlYgXQUz7Gvc51lhC2MVa4QeSFzKYJswCvIELdV-mUVJU=s168",
     imageAlt: "Front of plain black t-shirt.",
   },
   {
@@ -58,7 +58,7 @@ const products = [
       "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
     options: "8 colors",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+      "https://openseauserdata.com/files/ff9a23f0b44c507dee128950daab5c5e.jpg",
     imageAlt:
       "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
   },
@@ -71,7 +71,7 @@ const products = [
       "Look like a visionary CEO and wear the same black t-shirt every day.",
     options: "Black",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
+      "https://lh3.googleusercontent.com/cgFAvnBcqoDZCIPUgRdYGQGdPR5HFBHgXOfKsc4-r-1Cpw9a1GEnKELv48wTF5BInT6J5Fyvu-J0ZDEIjb57YaWiwsIhh7k095sxQfE=s168",
     imageAlt: "Front of plain black t-shirt.",
   },
   // More products...

@@ -33,8 +33,6 @@ export function PhoneFrame({
         src={frame}
         alt=""
         className="pointer-events-none absolute inset-0 h-full w-full"
-        unoptimized
-        priority={priority}
       />
     </div>
   );

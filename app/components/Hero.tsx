@@ -1,12 +1,17 @@
 import { useId, useRef, useState } from "react";
 
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import clsx from "clsx";
+import { ethers } from "ethers";
 import { motion, useInView, useMotionValue } from "framer-motion";
+import { ClientOnly } from "remix-utils";
+import { useAccount } from "wagmi";
 
 import { AppScreen } from "~/components/AppScreen";
 import { Button } from "~/components/Button";
 import { Container } from "~/components/Container";
 import { PhoneFrame } from "~/components/PhoneFrame";
+import { useDonations } from "~/hooks/useDonations";
 import logoBbc from "~/images/logos/bbc.svg";
 import logoCbs from "~/images/logos/cbs.svg";
 import logoCnn from "~/images/logos/cnn.svg";
@@ -334,6 +339,12 @@ function AppDemo() {
 }
 
 export function Hero() {
+  const donations = useDonations();
+
+  const { openConnectModal } = useConnectModal();
+
+  const { isConnected } = useAccount();
+
   return (
     <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
@@ -347,7 +358,25 @@ export function Hero() {
               like Apple, H&M, Mr. Beast, Fisher, Stella Bossi.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <Button color="blue">Donate now</Button>
+              <ClientOnly>
+                {() => (
+                  <Button
+                    color="blue"
+                    onClick={() => {
+                      if (!isConnected) {
+                        openConnectModal?.();
+                      } else {
+                        donations.donate({
+                          value: ethers.utils.parseEther("1"),
+                        });
+                      }
+                    }}
+                  >
+                    Donate now
+                  </Button>
+                )}
+              </ClientOnly>
+
               <Button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"

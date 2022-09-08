@@ -6,6 +6,7 @@ import { Button } from "~/components/Button";
 import { Container } from "~/components/Container";
 import { Logo } from "~/components/Logo";
 import { NavLinks } from "~/components/NavLinks";
+import { useMyBalance } from "~/hooks/useDonations";
 
 function MenuIcon(props) {
   return (
@@ -46,6 +47,8 @@ function MobileNavLink({ children, ...props }) {
 }
 
 export function Header() {
+  const { data: balance } = useMyBalance();
+
   return (
     <header>
       <nav>
@@ -118,10 +121,12 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <span className="text-gray-700 text-sm">Balance: 20$</span>
-            <Button href="#" className="hidden lg:block">
+            <span className="text-gray-700 text-sm">
+              Balance: {balance?.donatedAmount} ETH
+            </span>
+            {/* <Button href="#" className="hidden lg:block">
               Donate now
-            </Button>
+            </Button> */}
           </div>
         </Container>
       </nav>

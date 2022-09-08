@@ -5,24 +5,24 @@ const moonscan = {
   url: "https://moonriver.moonscan.io",
 };
 
-const eth: Chain = {
-  id: 1,
-  name: "Ethereum",
+const localhost: Chain = {
+  id: 1335,
+  name: "Anvil Localhost",
   nativeCurrency: {
     decimals: 18,
     name: "Ethereum",
     symbol: "ETH",
   },
   rpcUrls: {
-    default: "https://rpc.api.moonriver.moonbeam.network",
+    default: "http://127.0.0.1:8545",
   },
   blockExplorers: {
     default: moonscan,
     etherscan: moonscan,
   },
-  network: "moonriver",
+  network: "ethereum",
 };
 
-const chains = [eth];
+const customChains = [localhost];
 
-export default chains;
+export default customChains;
