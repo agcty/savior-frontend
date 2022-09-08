@@ -9,7 +9,7 @@ export function NavLinks() {
   return [
     ["Features", "#features"],
     ["Reviews", "#reviews"],
-    ["Pricing", "#pricing"],
+    ["Apply as a Partner", "#pricing"],
     ["FAQs", "#faqs"],
   ].map(([label, href], index) => (
     <Link

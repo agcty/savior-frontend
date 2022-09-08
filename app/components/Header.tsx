@@ -109,7 +109,7 @@ export function Header() {
                             <Button href="/login" variant="outline">
                               Log in
                             </Button>
-                            <Button href="#">Download the app</Button>
+                            <Button href="#">Donate now</Button>
                           </div>
                         </Popover.Panel>
                       </>
@@ -118,11 +118,9 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
-              Log in
-            </Button>
+            <span className="text-gray-700 text-sm">Balance: 20$</span>
             <Button href="#" className="hidden lg:block">
-              Download
+              Donate now
             </Button>
           </div>
         </Container>

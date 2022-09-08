@@ -10,9 +10,9 @@ const faqs = [
         "We're working with companies and social media personalities that want to help the Ukraine. Because we do partnerships on a rolling basis, it wouldn't make sense to ...",
     },
     {
-      question: "Isn’t this insider trading?",
+      question: "How do donations work?",
       answer:
-        "Yes exactly. But at scale! Historically you could only make insider trades with knowledge from your direct network. Pocket brings you insider trading tips from people you don’t even know.",
+        "It's similar to a prepaid credit card. You can increase your balance by donating and then redeem for rewards as they become available.",
     },
     {
       question: "But isn’t insider trading illegal?",

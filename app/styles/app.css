@@ -840,6 +840,14 @@ a,
   left: calc(23 / 366 * 100%);
 }
 
+.top-6 {
+  top: 1.5rem;
+}
+
+.left-6 {
+  left: 1.5rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1000,6 +1008,10 @@ a,
   height: calc(686 / 729 * 100%);
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1030,6 +1042,10 @@ a,
 
 .w-\[calc\(318\/366\*100\%\)\] {
   width: calc(318 / 366 * 100%);
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .min-w-0 {
@@ -1217,6 +1233,12 @@ a,
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1248,6 +1270,14 @@ a,
   border-radius: calc(58 / 366 * 100%) / calc(58 / 729 * 100%);
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-t-2xl {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1274,6 +1304,11 @@ a,
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 229 229 / var(--tw-border-opacity));
+}
+
+.border-slate-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(241 245 249 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -1325,6 +1360,11 @@ a,
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+
 .fill-cyan-500 {
   fill: #06b6d4;
 }
@@ -1339,6 +1379,10 @@ a,
 
 .fill-blue-500 {
   fill: #3b82f6;
+}
+
+.fill-slate-100 {
+  fill: #f1f5f9;
 }
 
 .stroke-gray-300 {
@@ -1369,6 +1413,10 @@ a,
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-4 {
@@ -1460,6 +1508,10 @@ a,
 
 .pt-\[calc\(23\/318\*100\%\)\] {
   padding-top: calc(23 / 318 * 100%);
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -1585,6 +1637,21 @@ a,
   color: rgb(30 58 138 / var(--tw-text-opacity));
 }
 
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
+.text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1596,8 +1663,19 @@ a,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-gray-900\/20 {
   --tw-shadow-color: rgb(23 23 23 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-slate-900\/10 {
+  --tw-shadow-color: rgb(15 23 42 / 0.1);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -1903,6 +1981,10 @@ a,
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+
   .sm\:gap-x-6 {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem;
@@ -1910,6 +1992,12 @@ a,
 
   .sm\:gap-y-10 {
     row-gap: 2.5rem;
+  }
+
+  .sm\:space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
   }
 
   .sm\:self-auto {
@@ -1943,6 +2031,11 @@ a,
     font-size: 0.875rem;
     line-height: 1.5rem;
   }
+
+  .sm\:text-4xl {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1964,6 +2057,10 @@ a,
 
   .md\:pt-6 {
     padding-top: 1.5rem;
+  }
+
+  .md\:text-center {
+    text-align: center;
   }
 }
 
@@ -2012,6 +2109,10 @@ a,
 
   .lg\:ml-12 {
     margin-left: 3rem;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem;
   }
 
   .lg\:block {
